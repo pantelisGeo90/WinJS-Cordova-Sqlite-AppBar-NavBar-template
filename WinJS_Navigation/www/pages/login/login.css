@@ -1,0 +1,29 @@
+﻿
+
+@media (min-width:698px) {
+    .center-form {
+        min-width: 400px;
+        left: calc(-200px + 50%);
+    }
+
+    .login-title-header-content {
+        display: flex !important;
+    }
+    .login-title-header-content .login-title {
+        display: flex !important;
+    }
+}
+
+.login-title-header-content {
+    margin: 15px 0px 20px 0px;
+    text-align: center;
+}
+
+    .login-title-header-content img {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .login-title-header-content .login-title {
+        align-items: center;
+    }

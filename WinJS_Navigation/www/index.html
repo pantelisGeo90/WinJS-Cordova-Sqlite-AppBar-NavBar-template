@@ -1,0 +1,183 @@
+﻿<!--
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>cordona1</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="msapplication-tap-highlight" content="no">
+    <!--<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">-->
+    <link rel="stylesheet" href="WinJS/css/ui-light.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+    <script type="text/javascript" src="WinJS/js/base.min.js"></script>
+    <script type="text/javascript" src="WinJS/js/ui.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/navigator.js"></script>
+    <script type="text/javascript" src="js/platformOverrides.js"></script>
+
+    <script type="text/javascript" src="js/Utils/helper.js"></script>
+    <script type="text/javascript" src="js/Utils/log.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+    <div id="topAppBar"
+         data-win-control="WinJS.UI.AppBar"
+         data-win-options="{placement:'top'}">
+
+        <div data-win-control="WinJS.UI.AppBarCommand"
+             data-win-options="{ id: 'pageTitle', type: 'content'}"
+             class="bar-left app-title">
+            <button type="button"
+                    data-win-control="WinJS.UI.BackButton"
+                    aria-label="Back"></button>
+            <h3 class="win-h3">Title</h3>
+        </div>
+
+        <!--<button data-win-control="WinJS.UI.AppBarCommand"
+                data-win-options="{
+                    id:'cmdEdit',label:'Edit',
+                    icon:'edit',
+                    tooltip:'Edit item',
+                    section:'primary',
+                    onclick:MainAppBar.outputCommand}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand"
+                data-win-options="{
+                    id:'cmdCamera',
+                    label:'Camera',
+                    icon:'camera',
+                    tooltip:'Take a picture',
+                    section:'primary',
+                    onclick:MainAppBar.outputCommand}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand"
+                data-win-options="{
+                    id:'cmdSettings',
+                    label:'Settings',
+                    icon:'settings',
+                    tooltip:'Settings',
+                    section:'primary',
+                    onclick:MainAppBar.outputCommand}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand"
+                data-win-options="{
+                    id:'cmdShare',
+                    label:'Share',
+                    icon:'reshare',
+                    tooltip:'Share',
+                    section:'primary',
+                    onclick:MainAppBar.outputCommand}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand"
+                data-win-options="{
+                    id:'cmdPrint',
+                    label:'Print',
+                    section:'secondary',
+                    onclick:MainAppBar.outputCommand}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand"
+                data-win-options="{
+                    id:'cmdNetwork',
+                    label:'Network',
+                    section:'secondary',
+                    onclick:MainAppBar.outputCommand}"></button>-->
+    </div>
+
+
+    <div id="app">
+        <div class="splitView"
+             id="mainMenuBar"
+             data-win-control="WinJS.UI.SplitView"
+             data-win-options="{
+            openedDisplayMode: 'inline',
+            closedDisplayMode: 'inline'
+         }">
+            <!-- Pane area -->
+            <div>
+                <div class="header">
+                    <button class="win-splitviewpanetoggle"
+                            data-win-control="WinJS.UI.SplitViewPaneToggle"
+                            data-win-options="{ splitView: select('.splitView') }"></button>
+                    <div class="side-menu">
+                        <h3 class="win-h3">Menu</h3>
+                    </div>
+                </div>
+
+                <div class="nav-commands">
+                    <menu>
+                        <li>
+                            <div id="homeBtn"
+                                 data-win-control="WinJS.UI.NavBarCommand"
+                                 data-win-options="{
+                             id:'homeBtn',
+                             label:'Go Home',
+                             icon:'home',
+                             tooltip:'Home',
+                             type:'button',
+                             disabled:'true',
+                             onclick: MainMenuBar.onClickAction}"></div>
+                        </li>
+                        <li>
+                            <div id="logBtn"
+                                 data-win-control="WinJS.UI.NavBarCommand"
+                                 data-win-options="{
+                             id:'logBtn',
+                             label:'Log/History',
+                             icon:'contactinfo',
+                             tooltip:'Log',
+                             type:'button',
+                             onclick: MainMenuBar.onClickAction }"></div>
+                        </li>
+
+                        <li style="border-top:solid 1px;">
+                            <div id="profileBtn"
+                                 data-win-control="WinJS.UI.NavBarCommand"
+                                 data-win-options="{
+                             id:'profileBtn',
+                             label:'Profile',
+                             icon:'contact',
+                             tooltip:'User profile',
+                             type:'button',
+                             onclick: MainMenuBar.onClickAction }"></div>
+                        </li>
+                        <li>
+                            <div id="testBtn"
+                                 data-win-control="WinJS.UI.NavBarCommand"
+                                 data-win-options="{
+                             id:'testBtn',
+                             label: 'Test',
+                             icon: 'settings',
+                             onclick: MainMenuBar.onClickAction }"></div>
+                        </li>
+                        <li>
+                            <div data-win-control="WinJS.UI.NavBarCommand"
+                                 data-win-options="{
+                            id:'logOutBtn',
+                            label:'Log Out',
+                            icon:'up',
+                            tooltip:'Log out',
+                            type:'button',
+                            onclick: MainMenuBar.onClickAction }"></div>
+                        </li>
+                    </menu>
+
+                </div>
+            </div>
+
+
+
+            <!-- Content area -->
+            <button class="win-splitviewpanetoggle"
+                    style="background-color:rgb(242,242,242)"
+                    data-win-control="WinJS.UI.SplitViewPaneToggle"
+                    data-win-options="{ splitView: select('.splitView') }"></button>
+            <div id="contenthost"
+                 class="contenttext"
+                 data-win-control="Application.PageControlNavigator"
+                 data-win-options="{home: 'pages/login/login.html'}">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

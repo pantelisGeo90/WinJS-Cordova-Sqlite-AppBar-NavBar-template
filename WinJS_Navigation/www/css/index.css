@@ -1,0 +1,190 @@
+﻿/*
+Copyright (c) Microsoft Corporation. All rights reserved
+*/
+
+section[role="main"] {
+    float: left;
+    width: 100%;
+}
+
+header[role="banner"] {
+    float: left;
+    width: 100%;
+}
+
+    header[role="banner"] button,
+    header[role="banner"] h1 {
+        float: left;
+    }
+
+
+/* Add your CSS here */
+.content, #app {
+    height: calc(100%);
+}
+
+    #app .win-splitviewpanetoggle {
+        float: left;
+    }
+
+    /* SplitView pane content style*/
+    #app .header {
+        white-space: nowrap;
+    }
+
+    #app .title {
+        font-size: 25px;
+        left: 50px;
+        margin-top: 6px;
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    #app .nav-commands {
+        margin-top: 10px;
+    }
+
+.win-navbarcommand-button {
+    background-color: transparent;
+}
+
+#app .win-splitview-pane-hidden .win-navbarcommand-button {
+    width: 46px;
+}
+
+#app .win-splitview-pane-hidden .win-navbarcommand-label {
+    /* Workaround: Make sure pane doesn't scroll if ContentDialog restores focus to
+       NavBarCommand's label
+    */
+    visibility: hidden;
+}
+
+/*SplitView pane style for different screen sizes*/
+#app.large .splitView {
+    width: 100%;
+}
+
+#app.large .win-splitview-content .win-splitviewpanetoggle {
+    display: none;
+}
+
+#app.medium .splitView {
+    width: 80%
+}
+
+#app.medium .win-splitview-content .win-splitviewpanetoggle {
+    display: none;
+}
+
+/*#app.small .splitView {
+    width: 60%;
+}*/
+
+/*SplitView content style*/
+#app .win-splitview-content {
+    background-color: rgb(112,112,112);
+}
+
+#app .contenttext {
+    margin-top: 48px;
+}
+
+
+.main-section-app {
+    margin-top: 48px;
+}
+
+
+.bar-left {
+    position: absolute !important;
+    left: 0;
+}
+
+#topAppBar {
+    margin-left: 48px;
+    width: calc(100% - 48px);
+}
+
+div.app-title {
+    padding: 0 10px;
+    margin-top: 3px;
+}
+div.app-title > *{
+    float:left;
+}
+
+    div.app-title h3 {
+        padding-top: 4px;
+    }
+
+
+
+/* All pages should obey this rule */
+.fragment {
+    margin: 0 15px;
+}
+
+.side-menu {
+    margin-left: 48px;
+}
+
+.side-menu h3 {
+    padding-top: 10px;
+    margin-left: 15px;
+}
+
+@media (max-width:499px) {
+    .fragment {
+        /*margin: 0 30px;*/
+    }
+}
+
+@media (max-width:699px) {
+    .fragment {
+        /*margin: 0 50px;*/
+    }
+}
+
+.hidden{
+    display:none;
+}
+
+
+.nav-commands {
+    display: block;
+    white-space: nowrap;
+    height: 100%;
+}
+
+    .nav-commands > menu {
+        display: flex;
+        height: calc(-48px + 100%);
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+        .nav-commands > menu > li {
+            display: block;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+            .nav-commands > menu > li:nth-last-child(4) {
+                flex: 1; /* Put Settings on the bottom */
+            }
+
+.win-splitview-pane-closed .win-splitviewcommand-label {
+    /* Make sure pane content doesn't scroll */
+    /* if SplitViewCommand label receives focus while pane is closed. */
+    visibility: hidden;
+}
+
+.nav-selected {
+    border-left: solid 5px cadetblue;
+}
+
+.nav-selected div.win-navbarcommand-button {
+    margin-left: -5px;
+}
